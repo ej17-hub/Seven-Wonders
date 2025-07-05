@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 7 Wonders of the World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+  <nav class="flex justify-between items-center px-6 py-6 md:px-12 md:py-8">
+        <div class="text-2xl font-bold">EJ</div>
+        <div class="hidden md:flex space-x-6">
+            <a href="index.html" class="hover:text-gray-400">Home</a>
+            <a href="#" class="hover:text-gray-400" style="text-decoration: line-through;">About</a>
+            <a href="wonders.html" class="hover:text-gray-400">Wonders</a>
+            <a href="#" class="hover:text-gray-400" style="text-decoration: line-through;">Gallery</a>
+            <a href="#" class="hover:text-gray-400" style="text-decoration: line-through;">History</a>
+        </div>
+        <button class="bg-white text-black px-6 py-2 rounded-full ml-4" style="text-decoration: line-through;">Explore now →</button>
+    </nav>
+    
+    <link rel="stylesheet" href="styles/styles.css">
+    <main class="flex flex-col items-center text-center px-6 md:px-0 py-8 md:py-16">
+        <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text mb-6">Discover the Wonders That Shaped History</h1>
+        <p class="max-w-xl mt-2 mb-8 text-gray-300">From the towering Great Wall to the majestic Taj Mahal, embark on a journey to uncover the stories, culture, and brilliance behind the world's most iconic landmarks.</p>
+    </main>
+
+    <section class="mt-4 md:mt-10 overflow-x-auto whitespace-nowrap px-4 pb-12" id="wondersSection">
+        <div class="flex justify-center space-x-6" id="wondersContainer">
+            <a href="wonders.html"><img src="img/GreatWall.jpg" class="rounded-lg w-48 h-64 object-cover hover:scale-105 transition" alt="Great Wall"></a>
+            <a href="wonders.html"><img src="img/PetraBG.jpg" class="rounded-lg w-48 h-64 object-cover hover:scale-105 transition" alt="Petra"></a>
+            <a href="wonders.html"><img src="img/ChristRedeem.jpg" class="rounded-lg w-48 h-64 object-cover hover:scale-105 transition" alt="Christ the Redeemer"></a>
+            <a href="wonders.html"><img src="img/Machu_Picchu.jpg" class="rounded-lg w-48 h-64 object-cover hover:scale-105 transition" alt="Machu Picchu"></a>
+            <a href="wonders.html"><img src="img/Chichen_Itza_3.jpg" class="rounded-lg w-48 h-64 object-cover hover:scale-105 transition" alt="Chichen Itza"></a>
+            <a href="wonders.html"><img src="img/Colosseo.jpg" class="rounded-lg w-48 h-64 object-cover hover:scale-105 transition" alt="Colosseum"></a>
+            <a href="wonders.html"><img src="img/TajMahal.jpg" class="rounded-lg w-48 h-64 object-cover hover:scale-105 transition" alt="Taj Mahal"></a>
+            
+        </div>
+    </section>
+</body>
+</html>
