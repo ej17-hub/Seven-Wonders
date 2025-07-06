@@ -1,5 +1,94 @@
+/* Custom mobile-first responsive styles */
+        .wonder-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .wonder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+        }
 
-        .hero-section {
+        /* Mobile navigation toggle */
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+
+        /* Gradient text animation */
+        .gradient-text {
+            background: linear-gradient(45deg, #8B4513, #D2691E, #CD853F, #F4A460);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Responsive grid for wonders */
+        @media (max-width: 640px) {
+            .wonders-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .wonder-card {
+                height: 250px;
+            }
+        }
+        
+        @media (min-width: 640px) and (max-width: 768px) {
+            .wonders-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .wonder-card {
+                height: 280px;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .wonders-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+            
+            .wonder-card {
+                height: 300px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .wonders-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+            
+            .wonder-card {
+                height: 320px;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .wonders-grid {
+                grid-template-columns: repeat(7, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .wonder-card {
+                height: 280px;
+            }
+        }
+   
+    .hero-section {
             position: relative;
             min-height: 100vh;
             background: url('https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
@@ -268,57 +357,323 @@
         main{
             margin-top: 15px;
         }
-       #wondersContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: visible; /* Allow content to overflow */
-    padding: 15px; /* Increase padding to prevent cutoff */
-    margin: 50px 0; /* Add vertical margin for extra space */
-}
-
-#wondersContainer img {
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid white;
-    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-    position: relative;
-    z-index: 1; /* Base z-index */
-}
-
-#wondersContainer img:hover {
-    transform: scale(1.5);
-    transform-origin: center center; /* Ensure scaling from center */
-    object-fit: cover; /* Keep original object-fit */
-    z-index: 10;
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.5);
-    border-radius: 10px !important; /* Force border radius with !important */
-    border: 2px solid white !important; /* Force border with !important */
-    position: relative; /* Ensure positioning context */
-}
+       
                 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .gallery-container {
-                width: 95%;
-                height: 90%;
-            }
-            
-            .gallery-controls {
-                padding: 15px 20px;
-            }
-            
-            .photo-info {
-                padding: 20px;
-            }
-            
-            .destination-cards {
-                display: none !important;
-            }
-        }
-   
+        
+       /* MOBILE: max-width 480px */
+    @media (max-width: 480px) {
+    /* Add this to your main hero/background container */
+    .hero-section, .main-container, .background-container {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    .location-badge {
+        font-size: 0.8rem;
+        margin: 0 auto 10px auto;
+        display: inline-block;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .next-photo-btn {
+        width: 90%;
+        font-size: 0.9rem;
+        margin-top: 250px;
+        position: relative; /* Ensure button stays above fixed background */
+        z-index: 5;
+    }
+    
+    .destination-cards {
+        display: flex !important;
+        flex-direction: row;
+        gap: 10px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        width: 100vw;
+        border-radius: 0;
+        z-index: 10;
+        overflow-x: auto;
+        overflow-y: hidden;
+        align-items: flex-end;
+        scrollbar-width: none;
+    }
+    
+    .destination-card {
+        flex: 0 0 80px;
+        width: 100px;
+        height: 150px;
+        max-width: 90px;
+        min-width: 70px;
+        min-height: 90px;
+        margin-bottom: 0;
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.14);
+        overflow: hidden;
+        background: #222;
+        position: relative;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border 0.2s, box-shadow 0.2s;
+    }
+    
+    .destination-card .overlay {
+        padding: 6px 6px 6px 6px;
+    }
+    
+    .destination-card .title {
+        font-size: 0.85rem;
+    }
+}
+/* TABLET: 481px–768px */
+@media (min-width: 481px) and (max-width: 625px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    .location-badge {
+        font-size: 0.8rem;
+        margin: 0 auto 10px auto;
+        display: inline-block;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .next-photo-btn {
+        width: 90%;
+        font-size: 0.9rem;
+        margin-top: 250px;
+        position: relative; /* Ensure button stays above fixed background */
+        z-index: 5;
+    }
+    
+    .destination-cards {
+        display: flex !important;
+        flex-direction: row;
+        gap: 10px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        width: 100vw;
+        border-radius: 0;
+        z-index: 10;
+        overflow-x: auto;
+        overflow-y: hidden;
+        align-items: flex-end;
+        scrollbar-width: none;
+    }
+    
+    .destination-card {
+        flex: 0 0 80px;
+        width: 100px;
+        height: 150px;
+        max-width: 90px;
+        min-width: 70px;
+        min-height: 90px;
+        margin-bottom: 0;
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.14);
+        overflow: hidden;
+        background: #222;
+        position: relative;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border 0.2s, box-shadow 0.2s;
+    }
+    
+    .destination-card .overlay {
+        padding: 6px 6px 6px 6px;
+    }
+    
+    .destination-card .title {
+        font-size: 0.85rem;
+    }
+}
+@media (min-width: 626px) and (max-width: 768px)
+{
+ .hero-title {
+        font-size: 2.5rem;
+    }
+    
+     .hero-description {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0 10px;
+        margin-bottom: 20px; /* Add margin for spacing */
+        line-height: 1.5;    /* Improve readability */
+        max-width: 100%;     /* Prevent overflow */
+        opacity: 0.95;       /* Match desktop style */
+    }
+    
+    .location-badge {
+        font-size: 0.8rem;
+        margin: 0 auto 10px auto;
+        display: inline-block;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .next-photo-btn {
+        width: 90%;
+        font-size: 0.9rem;
+        margin-top: 250px;
+        position: relative; /* Ensure button stays above fixed background */
+        z-index: 5;
+    }
+    
+    .destination-cards {
+        display: flex !important;
+        flex-direction: row;
+        gap: 30px;
+        position: fixed;
+        left: 10px;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        width: 100vw;
+        border-radius: 0;
+        z-index: 10;
+        overflow-x: auto;
+        overflow-y: hidden;
+        align-items: flex-end;
+        scrollbar-width: none;
+    }
+    
+    .destination-card {
+        flex: 0 0 80px;
+        width: 380px;
+        height: 150px;
+        max-width: 90px;
+        min-width: 70px;
+        min-height: 90px;
+        margin-bottom: 0;
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.14);
+        overflow: hidden;
+        background: #222;
+        position: relative;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border 0.2s, box-shadow 0.2s;
+    }
+    
+    .destination-card .overlay {
+        padding: 6px 6px 6px 6px;
+    }
+    
+    .destination-card .title {
+        font-size: 0.85rem;
+    }
+}
+
+/* SMALL LAPTOP: 769px–1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Add fixed background for tablet view */
+    .hero-section, .main-container, .background-container {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-container {
+        width: 80%;
+        height: 70%;
+    }
+    
+    .gallery-controls {
+        padding: 20px 25px;
+    }
+    
+    .photo-info {
+        padding: 20px;
+    }
+    
+    .destination-cards {
+        margin-top: 15px;
+        gap: 5px;
+    }
+    
+    .destination-card img {
+        height: 150px;
+        object-fit: cover;
+    }
+    
+    #wondersContainer img {
+        width: 180px;
+        height: 220px;
+    }
+    
+    /* Ensure View Photos button stays above fixed background */
+    .view-photos-btn {
+        position: relative;
+        z-index: 5;
+    }
+}
+
+/* OPTIONAL: Ultra-wide screens >1440px */
+@media (min-width: 1440px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+    .hero-description {
+        font-size: 1.25rem;
+    }
+    .gallery-container {
+        width: 60%;
+        height: 70%;
+    }
+}
+
+/* For large desktops (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .hero-title {
+        font-size: 5rem;
+    }
+    .gallery-container {
+        max-width: 1000px;
+        height: 70%;
+    }
+    #wondersContainer img {
+        width: 220px;
+        height: 280px;
+    }
+}

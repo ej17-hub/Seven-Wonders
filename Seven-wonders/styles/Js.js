@@ -1,4 +1,25 @@
-
+ function toggleMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const menuButton = document.querySelector('[onclick="toggleMobileMenu()"]');
+            
+            if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+        
+        // Close mobile menu when window is resized to desktop
+        window.addEventListener('resize', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.remove('active');
+            }
+        });
         // All Seven Wonders data
         const wondersData = {
             'taj-mahal': {
@@ -28,20 +49,20 @@
                 title: 'PETRA',
                 location: 'JORDAN',
                 description: 'An ancient archaeological city carved into rose-red sandstone cliffs, Petra was the capital of the Nabataean Kingdom and showcases remarkable rock-cut architecture.',
-               background: 'img/PetraBG.jpg',
+               background: '../img/PetraBG.jpg',
                 photos: [
                     {
-                        url: 'img/petra1.jpg',
+                        url: '../img/petra1.jpg',
                         title: 'The Treasury (Al-Khazneh)',
                         description: 'The most famous facade in Petra, carved directly into the pink sandstone cliff face with intricate Hellenistic architecture.'
                     },
                     {
-                        url: 'img/petra2.jpg',
+                        url: '../img/petra2.jpg',
                         title: 'The Monastery (Ad Deir)',
                         description: 'The largest carved facade in Petra, requiring a challenging hike to reach but offering spectacular views and architecture.'
                     },
                     {
-                        url: 'img/petra3.jpg',
+                        url: '../img/petra3.jpg',
                         title: 'The Siq Canyon',
                         description: 'The dramatic narrow gorge that serves as the main entrance to Petra, with towering sandstone walls creating a mystical passage.'
                     }
@@ -64,7 +85,7 @@
                         description: 'The ancient citadel emerging from morning mist, creating a mystical atmosphere that highlights its spiritual significance.'
                     },
                     {
-                        url: 'img/machu3.jpg',
+                        url: '../img/machu3.jpg',
                         title: 'Agricultural Terraces',
                         description: 'The ingenious terraced farming system that allowed the Incas to cultivate crops on steep mountain slopes.'
                     }
@@ -74,7 +95,7 @@
                 title: 'CHRIST THE REDEEMER',
                 location: 'RIO DE JANEIRO, BRAZIL',
                 description: 'A colossal Art Deco statue of Jesus Christ overlooking Rio de Janeiro, this iconic symbol of Christianity and Brazilian hospitality stands atop Corcovado Mountain.',
-                background: 'img/ChristRedeem.jpg',
+                background: '../img/ChristRedeem.jpg',
                 photos: [
                     {
                         url: 'https://i.pinimg.com/736x/9e/8a/cf/9e8acfacc6488eff7b8d6ec7249db2a5.jpg',
@@ -100,17 +121,17 @@
                 background: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
                 photos: [
                     {
-                        url: 'img/Chichen_Itza_3.jpg',
+                        url: '../img/Chichen_Itza_3.jpg',
                         title: 'El Castillo Pyramid',
                         description: 'The famous step pyramid dedicated to Kukulkan, featuring 365 steps representing the days of the year in Mayan calendar.'
                     },
                     {
-                        url: 'img/temple2.jpg',
+                        url: '../img/temple2.jpg',
                         title: 'The Great Ball Court',
                         description: 'The largest and most impressive ball court in ancient Mesoamerica, where the sacred ball game was played with religious significance.'
                     },
                     {
-                        url: 'img/temple3.jpg',
+                        url: '../img/temple3.jpg',
                         title: 'Temple of Warriors',
                         description: 'A complex of columns carved with warriors and the famous reclining Chac Mool statue, showcasing Mayan architectural mastery.'
                     }
@@ -151,12 +172,12 @@
                         description: 'The most visited section of the Great Wall, showcasing the impressive stone construction snaking across mountain ridges.'
                     },
                     {
-                        url: 'img/china2.jpg',
+                        url: '../img/china2.jpg',
                         title: 'Misty Mountain Views',
                         description: 'The Great Wall disappearing into misty mountains, demonstrating how it follows the natural contours of the landscape.'
                     },
                     {
-                        url: 'img/china3.jpg',
+                        url: '../img/china3.jpg',
                         title: 'Watchtower Detail',
                         description: 'One of the many watchtowers along the wall, showing the strategic defensive positions and architectural details of this ancient fortification.'
                     }
